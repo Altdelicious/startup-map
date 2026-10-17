@@ -1,0 +1,16 @@
+# Broken: id differs from the file name, website duplicates the valid fixture,
+# postcode is malformed, and the lat/lng override is in London.
+id: some-other-id
+name: Duplicate Website Ltd
+website: https://www.example-quantum.co.uk/
+tagline: Same website as another entry, pinned in the wrong city.
+category: semiconductors
+tags: [sensors]
+status: active
+location:
+  postcode: XX1 2YY
+  area: city-centre
+  lat: 51.5074
+  lng: -0.1278
+source: https://example-quantum.co.uk/about
+last_verified: 2026-09-01

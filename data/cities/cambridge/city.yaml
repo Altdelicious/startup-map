@@ -1,0 +1,19 @@
+# data/cities/cambridge/city.yaml
+# center and area centres are [lat, lng]; bbox is [south, west, north, east].
+id: cambridge
+name: Cambridge
+country: GB
+postcode_format: uk
+center: [52.2053, 0.1218]
+zoom: 12
+bbox: [52.05, -0.05, 52.35, 0.35]
+maintainers: [altdelicious]
+areas:
+  - { id: city-centre, label: City Centre, center: [52.2053, 0.1218] }
+  - { id: cambridge-science-park, label: Cambridge Science Park, center: [52.2331, 0.1465] }
+  - { id: biomedical-campus, label: Cambridge Biomedical Campus, center: [52.1750, 0.1407] }
+  - { id: west-cambridge, label: West Cambridge, center: [52.2091, 0.0929] }
+  - { id: st-johns-innovation-park, label: St John's Innovation Park, center: [52.2349, 0.1534] }
+  - { id: granta-park, label: Granta Park, center: [52.1167, 0.2250] }
+  - { id: babraham, label: Babraham Research Campus, center: [52.1327, 0.2055] }
+  - { id: wider-cambridgeshire, label: Wider Cambridgeshire, center: [52.2400, 0.0600] }

@@ -1,0 +1,10 @@
+id: example-ventures
+name: Example Ventures
+website: https://example-ventures.co.uk
+tagline: Seed and Series A investor in Cambridge deep-tech spin-outs.
+investor_type: vc
+focus: [quantum, semiconductors]
+location:
+  area: city-centre
+source: https://example-ventures.co.uk/about
+last_verified: 2026-10-16

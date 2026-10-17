@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/altdelicious/startup-map/schema/universities.schema.json",
+  "title": "Universities",
+  "description": "data/universities.yaml: institutions that spin out companies. origin.institution must be one of these ids for university spin-outs.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["universities"],
+  "properties": {
+    "universities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "name", "city"],
+        "properties": {
+          "id": { "$ref": "startup.schema.json#/properties/id" },
+          "name": { "type": "string", "minLength": 1, "maxLength": 120 },
+          "city": { "$ref": "startup.schema.json#/properties/id" },
+          "website": { "$ref": "startup.schema.json#/$defs/httpsUrl" }
+        }
+      }
+    }
+  }
+}

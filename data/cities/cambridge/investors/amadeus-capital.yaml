@@ -1,0 +1,10 @@
+id: amadeus-capital
+name: Amadeus Capital Partners
+website: https://www.amadeuscapital.com
+tagline: Venture investor in deep-tech companies, with an office in Cambridge.
+investor_type: vc
+focus: [ai-infra, semiconductors, quantum, biotech]
+location:
+  postcode: CB5 8AB
+source: https://www.amadeuscapital.com/locations/
+last_verified: 2026-10-17

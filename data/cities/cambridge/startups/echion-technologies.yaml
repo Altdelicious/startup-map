@@ -1,0 +1,16 @@
+id: echion-technologies
+name: Echion Technologies
+website: https://echiontech.com
+tagline: Niobium-based anode materials for fast-charging lithium-ion batteries.
+category: climate
+tags: [batteries]
+status: active
+founded: 2017
+location:
+  postcode: CB22 3FG
+origin:
+  type: university-spinout
+  institution: university-of-cambridge
+  department: Department of Materials Science and Metallurgy
+source: https://www.echiontech.com/
+last_verified: 2026-10-17

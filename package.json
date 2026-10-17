@@ -1,0 +1,30 @@
+{
+  "name": "startup-map",
+  "private": true,
+  "description": "Map my city's startups: an open map of deep-tech startups, built from YAML files.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "validate": "tsx scripts/validate.ts",
+    "geocode": "tsx scripts/geocode.ts",
+    "export": "tsx scripts/export.ts",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "dev": "npm run export && astro dev --root site",
+    "build": "npm run export && astro build --root site",
+    "preview": "astro preview --root site",
+    "check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "ajv": "^8.20.0",
+    "ajv-formats": "^3.0.1",
+    "astro": "^7.4.0",
+    "maplibre-gl": "^6.14.0",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "yaml": "^2.9.1"
+  }
+}

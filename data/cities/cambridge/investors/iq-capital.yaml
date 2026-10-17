@@ -1,0 +1,10 @@
+id: iq-capital
+name: IQ Capital
+website: https://www.iqcapital.vc
+tagline: Venture investor focused on deep-tech and AI, with an office in Cambridge.
+investor_type: vc
+focus: [ai-infra, ai-hardware, quantum, semiconductors]
+location:
+  postcode: CB2 1AW
+source: https://www.iqcapital.vc/contact
+last_verified: 2026-10-17

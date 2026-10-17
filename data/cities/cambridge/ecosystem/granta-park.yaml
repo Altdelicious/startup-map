@@ -1,0 +1,9 @@
+id: granta-park
+name: Granta Park
+website: https://www.grantapark.co.uk
+tagline: Science park with lab and office space for biotech companies.
+ecosystem_type: lab-space
+location:
+  postcode: CB21 6GP
+source: https://grantapark.co.uk/get-in-touch/
+last_verified: 2026-10-17

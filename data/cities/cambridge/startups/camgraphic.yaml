@@ -1,0 +1,16 @@
+id: camgraphic
+name: CamGraPhIC
+website: https://www.camgraphic.com
+tagline: Graphene-based photonic transceivers for low-power optical data links.
+category: semiconductors
+tags: [silicon-photonics]
+status: active
+founded: 2018
+location:
+  postcode: CB22 4QH
+origin:
+  type: university-spinout
+  institution: university-of-cambridge
+  department: Cambridge Graphene Centre
+source: https://find-and-update.company-information.service.gov.uk/company/11651312
+last_verified: 2026-10-17

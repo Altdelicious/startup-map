@@ -1,0 +1,13 @@
+id: five-ai
+name: Five AI
+website: https://five.ai
+tagline: Software and testing tools for self-driving vehicles.
+category: robotics
+tags: [autonomous-vehicles]
+status: acquired
+acquired_by: Bosch
+founded: 2016
+location:
+  postcode: CB1 2JD
+source: https://www.five.ai/
+last_verified: 2026-10-17

@@ -1,0 +1,130 @@
+# data/taxonomy.yaml
+# Categories and sub-tags shared by every city.
+# A startup picks one `category` and 1-5 `tags` from that category's list.
+# `colour` is the pin/chip colour on the map.
+# To propose a new tag, open a PR editing this file with a one-line reason.
+
+categories:
+  - key: ai-foundation
+    label: Foundation models & AI research
+    colour: "#7c3aed"
+    tags:
+      llms: Large language models
+      multimodal: Multimodal models
+      reasoning: Reasoning & planning
+      open-weights: Open-weights models
+      alignment-safety: Alignment & safety
+      interpretability: Interpretability
+
+  - key: ai-infra
+    label: AI infrastructure & tooling
+    colour: "#4f46e5"
+    tags:
+      training-infra: Training infrastructure
+      inference: Inference & serving
+      mlops: MLOps
+      evals: Evaluation & testing
+      data-labelling: Data & labelling
+      vector-db: Vector databases & retrieval
+      agents-frameworks: Agent frameworks
+
+  - key: ai-hardware
+    label: AI chips & compute
+    colour: "#2563eb"
+    tags:
+      accelerators: AI accelerators
+      neuromorphic: Neuromorphic computing
+      photonic-compute: Photonic computing
+      edge-ai: Edge AI hardware
+      chip-design-eda: Chip design & EDA
+
+  - key: ai-applied
+    label: Applied AI (vertical)
+    colour: "#0891b2"
+    tags:
+      ai-legal: Legal
+      ai-finance: Finance
+      ai-industrial: Industrial & manufacturing
+      ai-security: Cybersecurity
+      ai-code: Software development
+      ai-agents: Autonomous agents
+
+  - key: ai-science
+    label: AI for science & bio
+    colour: "#0d9488"
+    tags:
+      drug-discovery: Drug discovery
+      protein-design: Protein design
+      materials-discovery: Materials discovery
+      ai-chemistry: Chemistry
+      scientific-ml: Scientific ML & simulation
+
+  - key: robotics
+    label: Robotics & autonomy
+    colour: "#ea580c"
+    tags:
+      humanoids: Humanoid robots
+      industrial-robotics: Industrial robotics
+      autonomous-vehicles: Autonomous vehicles
+      drones: Drones
+      surgical-robotics: Surgical robotics
+
+  - key: quantum
+    label: Quantum
+    colour: "#c026d3"
+    tags:
+      quantum-hardware: Quantum hardware
+      quantum-software: Quantum software
+      quantum-sensing: Quantum sensing
+      quantum-networking: Quantum networking
+      photonics: Photonics
+
+  - key: semiconductors
+    label: Semiconductors & photonics
+    colour: "#475569"
+    tags:
+      chip-ip: Chip IP
+      compound-semis: Compound semiconductors
+      silicon-photonics: Silicon photonics
+      sensors: Sensors
+      manufacturing: Fabrication & manufacturing
+
+  - key: biotech
+    label: Biotech & synthetic biology
+    colour: "#16a34a"
+    tags:
+      synbio: Synthetic biology
+      genomics: Genomics
+      cell-gene-therapy: Cell & gene therapy
+      diagnostics: Diagnostics
+      biomanufacturing: Biomanufacturing
+      lab-automation: Lab automation
+
+  - key: climate
+    label: Climate & energy tech
+    colour: "#65a30d"
+    tags:
+      batteries: Batteries & storage
+      fusion: Fusion
+      hydrogen: Hydrogen
+      carbon-capture: Carbon capture
+      grid-software: Grid & energy software
+      alt-proteins: Alternative proteins
+
+  - key: materials
+    label: Advanced materials
+    colour: "#b45309"
+    tags:
+      graphene-2d: Graphene & 2D materials
+      metamaterials: Metamaterials
+      polymers: Advanced polymers
+      nanotech: Nanotechnology
+
+  - key: space
+    label: Space & aerospace
+    colour: "#1e3a8a"
+    tags:
+      satellites: Satellites
+      earth-observation: Earth observation
+      propulsion: Propulsion
+      space-software: Space software

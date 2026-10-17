@@ -1,0 +1,87 @@
+---
+import Base from "../layouts/Base.astro";
+const base = import.meta.env.BASE_URL.replace(/\/?$/, "/");
+const repoUrl = import.meta.env.PUBLIC_REPO_URL || "";
+---
+
+<Base>
+  <div class="app" data-base={base} data-repo={repoUrl}>
+    <header class="topbar">
+      <a class="brand" href={base}>
+        <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 4c-11 0-20 9-20 20 0 15 20 36 20 36s20-21 20-36C52 13 43 4 32 4z" fill="currentColor"/><circle cx="32" cy="24" r="8" fill="var(--surface)"/></svg>
+        <span>Map my city's startups</span>
+      </a>
+      <label class="city-select">
+        <span class="sr-only">City</span>
+        <select id="city"></select>
+      </label>
+      <label class="search">
+        <span class="sr-only">Search</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="m20 20-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input id="q" type="search" placeholder="Search names, taglines, tags…" autocomplete="off" />
+      </label>
+      <div class="view-toggle" role="group" aria-label="View">
+        <button type="button" data-view="map" aria-pressed="true">Map</button>
+        <button type="button" data-view="grid" aria-pressed="false">Grid</button>
+      </div>
+      <button type="button" id="filters-open" class="filters-open">Filters <span id="filter-badge" class="badge" hidden></span></button>
+      <nav class="topnav">
+        <a href={`${base}about/`}>About</a>
+        <a href={`${base}about/#add`}>Add a startup</a>
+      </nav>
+    </header>
+
+    <aside class="filters" id="filters" aria-label="Filters">
+      <div class="filters-head">
+        <p id="result-count" class="result-count" aria-live="polite">Loading…</p>
+        <button type="button" id="clear" class="link-button">Clear all</button>
+        <button type="button" id="filters-close" class="filters-close" aria-label="Close filters">✕</button>
+      </div>
+
+      <fieldset>
+        <legend>Layers</legend>
+        <div id="f-layer" class="checks"></div>
+      </fieldset>
+      <fieldset>
+        <legend>Category</legend>
+        <div id="f-cat" class="checks"></div>
+      </fieldset>
+      <fieldset id="tags-set" hidden>
+        <legend>Tags</legend>
+        <div id="f-tag" class="chips"></div>
+      </fieldset>
+      <fieldset>
+        <legend>Stage</legend>
+        <div id="f-stage" class="chips"></div>
+      </fieldset>
+      <fieldset>
+        <legend>Origin</legend>
+        <div id="f-origin" class="checks"></div>
+      </fieldset>
+
+      <p class="downloads">
+        Open data (CC BY 4.0):
+        <a href={`${base}data/data.csv`} download>CSV</a> ·
+        <a href={`${base}data/data.json`} download>JSON</a>
+      </p>
+    </aside>
+
+    <main class="main">
+      <div id="map" class="map" role="region" aria-label="Map"></div>
+      <div id="legend" class="legend" aria-hidden="true"></div>
+      <section id="grid" class="grid" hidden aria-label="Results"></section>
+      <p id="empty" class="empty" hidden>Nothing matches these filters.</p>
+    </main>
+
+    <aside id="detail" class="detail" hidden aria-labelledby="detail-name">
+      <button type="button" id="detail-close" class="detail-close" aria-label="Close details">✕</button>
+      <div id="detail-body"></div>
+    </aside>
+    <div id="scrim" class="scrim" hidden></div>
+  </div>
+
+  <script>
+    import { start } from "../scripts/app.ts";
+    start();
+  </script>
+</Base>

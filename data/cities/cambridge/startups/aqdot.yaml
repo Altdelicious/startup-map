@@ -1,0 +1,16 @@
+id: aqdot
+name: Aqdot
+website: https://www.aqdot.com
+tagline: Molecular capsule chemistry that captures odours and volatile compounds.
+category: materials
+tags: [nanotech]
+status: active
+founded: 2012
+location:
+  postcode: CB3 0LE
+origin:
+  type: university-spinout
+  institution: university-of-cambridge
+  department: Yusuf Hamied Department of Chemistry
+source: https://aqdot.com/
+last_verified: 2026-10-17

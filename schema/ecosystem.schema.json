@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/altdelicious/startup-map/schema/ecosystem.schema.json",
+  "title": "Ecosystem entry",
+  "description": "Labs, incubators, accelerators, lab space, coworking and tech-transfer offices. One per YAML file in data/cities/<city>/ecosystem/.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "name", "website", "tagline", "location", "ecosystem_type", "source", "last_verified"],
+  "properties": {
+    "id": { "$ref": "startup.schema.json#/properties/id" },
+    "name": { "$ref": "startup.schema.json#/properties/name" },
+    "website": { "$ref": "startup.schema.json#/$defs/httpsUrl" },
+    "tagline": { "$ref": "startup.schema.json#/properties/tagline" },
+    "location": { "$ref": "startup.schema.json#/properties/location" },
+    "ecosystem_type": {
+      "type": "string",
+      "enum": ["university-lab", "incubator", "accelerator", "lab-space", "coworking", "tech-transfer-office"]
+    },
+    "links": { "$ref": "startup.schema.json#/properties/links" },
+    "logo": { "$ref": "startup.schema.json#/properties/logo" },
+    "source": { "$ref": "startup.schema.json#/$defs/httpsUrl" },
+    "last_verified": { "$ref": "startup.schema.json#/properties/last_verified" }
+  }
+}

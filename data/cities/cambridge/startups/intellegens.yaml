@@ -1,0 +1,16 @@
+id: intellegens
+name: Intellegens
+website: https://intellegens.com
+tagline: Machine learning for experiment design in materials and chemistry.
+category: ai-science
+tags: [materials-discovery, scientific-ml]
+status: active
+founded: 2017
+location:
+  postcode: CB4 3NP
+origin:
+  type: university-spinout
+  institution: university-of-cambridge
+  department: Cavendish Laboratory
+source: https://intellegens.com
+last_verified: 2026-10-17

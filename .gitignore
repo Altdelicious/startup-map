@@ -1,0 +1,7 @@
+node_modules/
+site/dist/
+site/.astro/
+site/public/data/
+site/public/logos/
+.DS_Store
+.claude/

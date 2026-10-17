@@ -1,0 +1,14 @@
+# Broken: a tag from another category, a made-up stage, and an unknown field.
+id: wrong-tags-co
+name: Wrong Tags Co
+website: https://wrong-tags.example.com
+tagline: Quantum sensors that also, apparently, discover drugs.
+category: quantum
+tags: [quantum-sensing, drug-discovery]
+status: active
+stage: series-a-plus
+location:
+  area: west-cambridge
+source: https://wrong-tags.example.com/about
+last_verified: 2026-09-01
+funding_total: 5000000

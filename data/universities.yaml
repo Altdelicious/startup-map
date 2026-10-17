@@ -1,0 +1,25 @@
+# data/universities.yaml
+# Institutions that spin out companies. For `origin.type: university-spinout`,
+# `origin.institution` must be one of these ids. Add your city's universities here.
+
+universities:
+  # Cambridge
+  - { id: university-of-cambridge, name: University of Cambridge, city: cambridge, website: https://www.cam.ac.uk }
+  - { id: anglia-ruskin-university, name: Anglia Ruskin University, city: cambridge, website: https://www.aru.ac.uk }
+  # Oxford
+  - { id: university-of-oxford, name: University of Oxford, city: oxford, website: https://www.ox.ac.uk }
+  - { id: oxford-brookes-university, name: Oxford Brookes University, city: oxford, website: https://www.brookes.ac.uk }
+  # London
+  - { id: imperial-college-london, name: Imperial College London, city: london, website: https://www.imperial.ac.uk }
+  - { id: ucl, name: University College London, city: london, website: https://www.ucl.ac.uk }
+  - { id: kings-college-london, name: King's College London, city: london, website: https://www.kcl.ac.uk }
+  - { id: queen-mary-university-of-london, name: Queen Mary University of London, city: london, website: https://www.qmul.ac.uk }
+  - { id: lse, name: London School of Economics, city: london, website: https://www.lse.ac.uk }
+  - { id: city-st-georges, name: "City St George's, University of London", city: london, website: https://www.citystgeorges.ac.uk }
+  # Paris
+  - { id: psl-university, name: PSL University, city: paris, website: https://psl.eu }
+  - { id: sorbonne-universite, name: Sorbonne Université, city: paris, website: https://www.sorbonne-universite.fr }
+  - { id: institut-polytechnique-de-paris, name: Institut Polytechnique de Paris, city: paris, website: https://www.ip-paris.fr }
+  - { id: universite-paris-saclay, name: Université Paris-Saclay, city: paris, website: https://www.universite-paris-saclay.fr }
+  - { id: inria, name: Inria, city: paris, website: https://www.inria.fr }
+  - { id: cnrs, name: CNRS, city: paris, website: https://www.cnrs.fr }

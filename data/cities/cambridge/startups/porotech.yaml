@@ -1,0 +1,16 @@
+id: porotech
+name: Porotech
+website: https://www.porotech.com
+tagline: Porous gallium nitride materials and micro-LED technology for displays.
+category: semiconductors
+tags: [compound-semis]
+status: active
+founded: 2018
+location:
+  postcode: CB24 9NG
+origin:
+  type: university-spinout
+  institution: university-of-cambridge
+  department: Department of Materials Science and Metallurgy
+source: https://www.porotech.com/contact/
+last_verified: 2026-10-17

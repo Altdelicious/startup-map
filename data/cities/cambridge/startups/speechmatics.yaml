@@ -1,0 +1,12 @@
+id: speechmatics
+name: Speechmatics
+website: https://www.speechmatics.com
+tagline: Speech recognition and voice AI models available through APIs.
+category: ai-infra
+tags: [inference]
+status: active
+founded: 2006
+location:
+  postcode: CB4 0AE
+source: https://www.speechmatics.com/company/contact
+last_verified: 2026-10-17

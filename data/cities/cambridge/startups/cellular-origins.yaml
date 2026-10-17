@@ -1,0 +1,15 @@
+id: cellular-origins
+name: Cellular Origins
+website: https://cellularorigins.com
+tagline: Robotic automation for manufacturing cell and gene therapies.
+category: biotech
+tags: [lab-automation, biomanufacturing]
+status: active
+founded: 2022
+location:
+  postcode: SG8 6HQ
+origin:
+  type: corporate-spinout
+  institution: TTP
+source: https://cellularorigins.com/contact/
+last_verified: 2026-10-17

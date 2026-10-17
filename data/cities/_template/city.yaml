@@ -1,0 +1,13 @@
+# Copy this folder to data/cities/<city-id>/ and fill in every field.
+# center and area centres are [lat, lng]; bbox is [south, west, north, east]
+# (get the box from openstreetmap.org → Export). See SPEC.md "Adding a city".
+id: your-city-id
+name: Your City
+country: GB            # ISO 3166-1 alpha-2
+postcode_format: uk    # uk | fr
+center: [0, 0]
+zoom: 12
+bbox: [0, 0, 0, 0]
+maintainers: [your-github-handle]
+areas:
+  - { id: city-centre, label: City Centre, center: [0, 0] }

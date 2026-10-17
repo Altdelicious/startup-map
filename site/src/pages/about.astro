@@ -1,0 +1,60 @@
+---
+import Base from "../layouts/Base.astro";
+const base = import.meta.env.BASE_URL.replace(/\/?$/, "/");
+const repo = import.meta.env.PUBLIC_REPO_URL || "";
+---
+
+<Base title="About · Map my city's startups">
+  <main class="prose">
+    <p><a href={base}>← Back to the map</a></p>
+    <h1>About</h1>
+    <p>
+      <strong>Map my city's startups</strong> is an open, community-maintained map of deep-tech startups, the
+      investors who back them and the labs and spaces they grow out of. It starts with Cambridge; London, Oxford and
+      Paris use the same format.
+    </p>
+    <p>
+      Every entry is a small text file in a public GitHub repository. There's no database and no login. Anyone can
+      suggest an addition or a correction, automated checks validate it, and a maintainer reviews it before it goes live.
+    </p>
+
+    <h2 id="add">Add or correct a startup</h2>
+    <ul>
+      <li>
+        <strong>No GitHub experience?</strong>
+        {repo ? <a href={`${repo}/issues/new?template=add-startup.yml`}>Fill in the form</a> : "Fill in the add-startup issue form"}
+        and a maintainer will add it for you.
+      </li>
+      <li>
+        <strong>Comfortable with pull requests?</strong> Add one YAML file under
+        <code>data/cities/&lt;city&gt;/startups/</code>. See
+        {repo ? <a href={`${repo}/blob/main/CONTRIBUTING.md`}>CONTRIBUTING.md</a> : "CONTRIBUTING.md"}.
+      </li>
+      <li>On any entry, use <em>Suggest a correction</em> to edit its file directly.</li>
+    </ul>
+
+    <h2>What's included</h2>
+    <p>
+      Deep-tech companies only: AI research, infrastructure, chips and applied AI, robotics, quantum, semiconductors,
+      biotech, climate, advanced materials and space. Each startup appears once, in the city where its headquarters is.
+      Every entry links to a public source and records when it was last checked.
+    </p>
+
+    <h2>Open data</h2>
+    <p>
+      Download everything as <a href={`${base}data/data.csv`} download>CSV</a> or
+      <a href={`${base}data/data.json`} download>JSON</a>. Data is licensed
+      <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>; code is MIT.
+      {repo && <>Source: <a href={repo}>{repo.replace(/^https:\/\//, "")}</a>.</>}
+    </p>
+    <p class="muted small">Map data © OpenStreetMap contributors, tiles by OpenFreeMap.</p>
+  </main>
+</Base>
+
+<style>
+  .prose { max-width: 680px; margin: 0 auto; padding: 32px 16px 64px; font-size: 16px; line-height: 1.6; }
+  h1 { font-size: 30px; margin: 12px 0; }
+  h2 { font-size: 20px; margin-top: 32px; }
+  code { background: var(--surface-2); padding: 1px 5px; border-radius: 4px; font-size: 0.9em; }
+  :global(body) { overflow: auto; }
+</style>

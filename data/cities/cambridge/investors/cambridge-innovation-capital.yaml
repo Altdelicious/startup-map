@@ -1,0 +1,10 @@
+id: cambridge-innovation-capital
+name: Cambridge Innovation Capital
+website: https://www.cic.vc
+tagline: Venture investor backing deep-tech and life-science companies from Cambridge.
+investor_type: vc
+focus: [ai-infra, ai-science, quantum, semiconductors, biotech]
+location:
+  postcode: CB1 2JD
+source: https://www.cic.vc/contact/
+last_verified: 2026-10-17

@@ -1,0 +1,16 @@
+id: xampla
+name: Xampla
+website: https://xampla.com
+tagline: Plant protein materials that replace plastics in packaging and coatings.
+category: materials
+tags: [polymers]
+status: active
+founded: 2018
+location:
+  postcode: CB4 0FW
+origin:
+  type: university-spinout
+  institution: university-of-cambridge
+  department: Yusuf Hamied Department of Chemistry
+source: https://xampla.com
+last_verified: 2026-10-17

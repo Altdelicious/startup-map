@@ -1,0 +1,24 @@
+id: example-quantum-co
+name: Example Quantum Co
+website: https://example-quantum.co.uk
+tagline: Error-corrected photonic qubits for room-temperature quantum computing.
+category: quantum
+tags: [quantum-hardware, photonics]
+status: active
+stage: series-a
+founded: 2021
+team_size: 11-50
+location:
+  postcode: CB4 0WS
+  area: cambridge-science-park
+origin:
+  type: university-spinout
+  institution: university-of-cambridge
+  department: Cavendish Laboratory
+investors: [example-ventures]
+careers_url: https://example-quantum.co.uk/careers
+links:
+  linkedin: https://www.linkedin.com/company/example-quantum-co
+logo: logos/example-quantum-co.svg
+source: https://example-quantum.co.uk/about
+last_verified: 2026-10-16

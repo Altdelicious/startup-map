@@ -1,0 +1,16 @@
+id: cambridge-gan-devices
+name: Cambridge GaN Devices
+website: https://camgandevices.com
+tagline: Gallium nitride power transistors and ICs for more efficient power electronics.
+category: semiconductors
+tags: [compound-semis]
+status: active
+founded: 2016
+location:
+  postcode: CB4 0DS
+origin:
+  type: university-spinout
+  institution: university-of-cambridge
+  department: Department of Engineering
+source: https://camgandevices.com
+last_verified: 2026-10-17

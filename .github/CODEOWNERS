@@ -1,0 +1,6 @@
+# Owners of `*` are the project maintainers: they review everything, and only they
+# may change files outside data/ (scripts/validate.ts reads this list from the base branch).
+*                        @altdelicious
+
+# Each city's maintainers review their own city's data. Add a line per city.
+/data/cities/cambridge/  @altdelicious

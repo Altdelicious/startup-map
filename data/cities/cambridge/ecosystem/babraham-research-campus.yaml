@@ -1,0 +1,9 @@
+id: babraham-research-campus
+name: Babraham Research Campus
+website: https://www.babraham.com
+tagline: Bioscience campus with labs and incubator space for life-science companies.
+ecosystem_type: lab-space
+location:
+  postcode: CB22 3AT
+source: https://www.babraham.com
+last_verified: 2026-10-17

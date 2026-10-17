@@ -1,0 +1,265 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/altdelicious/startup-map/schema/startup.schema.json",
+  "title": "Startup entry",
+  "description": "One startup per YAML file in data/cities/<city>/startups/. Rules that need other files (tags vs taxonomy, institution vs universities.yaml, area vs city.yaml, founded <= current year, uniqueness, bbox) are checked by scripts/validate.ts. SPEC.md is the source of truth.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "name",
+    "website",
+    "tagline",
+    "category",
+    "tags",
+    "location",
+    "status",
+    "source",
+    "last_verified"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "maxLength": 64,
+      "description": "Lowercase slug; must equal the file name without .yaml"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 80
+    },
+    "website": {
+      "$ref": "#/$defs/httpsUrl"
+    },
+    "tagline": {
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 140,
+      "not": {
+        "pattern": "(<|>|https?://)"
+      },
+      "description": "Plain text, no HTML or links"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "ai-foundation",
+        "ai-infra",
+        "ai-hardware",
+        "ai-applied",
+        "ai-science",
+        "robotics",
+        "quantum",
+        "semiconductors",
+        "biotech",
+        "climate",
+        "materials",
+        "space"
+      ]
+    },
+    "tags": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 5,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+      },
+      "description": "Each tag must belong to the chosen category in taxonomy.yaml (checked in validate.ts)"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "acquired",
+        "closed"
+      ]
+    },
+    "acquired_by": {
+      "type": "string",
+      "maxLength": 80
+    },
+    "stage": {
+      "type": "string",
+      "enum": [
+        "pre-seed",
+        "seed",
+        "series-a",
+        "series-b",
+        "series-c-plus",
+        "grant-funded",
+        "bootstrapped",
+        "public"
+      ]
+    },
+    "founded": {
+      "type": "integer",
+      "minimum": 1950,
+      "maximum": 2100,
+      "description": "Upper bound (current year) is enforced in validate.ts"
+    },
+    "team_size": {
+      "type": "string",
+      "enum": [
+        "1-10",
+        "11-50",
+        "51-200",
+        "201-500",
+        "500+"
+      ]
+    },
+    "location": {
+      "type": "object",
+      "additionalProperties": false,
+      "anyOf": [
+        {
+          "required": [
+            "postcode"
+          ]
+        },
+        {
+          "required": [
+            "area"
+          ]
+        }
+      ],
+      "description": "Postcode, or just an area for stealth/remote teams (pin goes to the area's centre)",
+      "properties": {
+        "postcode": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 12
+        },
+        "area": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+        },
+        "lat": {
+          "type": "number",
+          "minimum": -90,
+          "maximum": 90
+        },
+        "lng": {
+          "type": "number",
+          "minimum": -180,
+          "maximum": 180
+        }
+      },
+      "dependentRequired": {
+        "lat": [
+          "lng"
+        ],
+        "lng": [
+          "lat"
+        ]
+      }
+    },
+    "origin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "university-spinout",
+            "corporate-spinout",
+            "independent"
+          ]
+        },
+        "institution": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Key from universities.yaml for university-spinout (checked in validate.ts); free-text company name for corporate-spinout"
+        },
+        "department": {
+          "type": "string",
+          "maxLength": 120
+        }
+      },
+      "if": {
+        "properties": {
+          "type": {
+            "enum": [
+              "university-spinout",
+              "corporate-spinout"
+            ]
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "type",
+          "institution"
+        ]
+      }
+    },
+    "investors": {
+      "type": "array",
+      "maxItems": 20,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "maxLength": 80
+      },
+      "description": "Investor ids from the same city's investors/ folder (rendered as links) or free text"
+    },
+    "careers_url": {
+      "$ref": "#/$defs/httpsUrl"
+    },
+    "links": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "linkedin": {
+          "$ref": "#/$defs/httpsUrl"
+        },
+        "github": {
+          "$ref": "#/$defs/httpsUrl"
+        },
+        "crunchbase": {
+          "$ref": "#/$defs/httpsUrl"
+        }
+      }
+    },
+    "logo": {
+      "type": "string",
+      "pattern": "^logos/[a-z0-9-]+\\.(svg|png)$",
+      "description": "Square, max 100 KB; SVGs are sanitised in CI"
+    },
+    "source": {
+      "$ref": "#/$defs/httpsUrl",
+      "description": "Public page confirming the startup exists and is based in this city"
+    },
+    "last_verified": {
+      "type": "string",
+      "format": "date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "description": "YYYY-MM-DD. YAML is parsed with the core schema so this stays a string."
+    }
+  },
+  "if": {
+    "properties": {
+      "status": {
+        "const": "acquired"
+      }
+    }
+  },
+  "then": {
+    "required": [
+      "acquired_by"
+    ]
+  },
+  "$defs": {
+    "httpsUrl": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https://",
+      "maxLength": 300
+    }
+  }
+}

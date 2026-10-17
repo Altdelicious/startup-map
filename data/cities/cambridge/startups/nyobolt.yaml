@@ -1,0 +1,16 @@
+id: nyobolt
+name: Nyobolt
+website: https://nyobolt.com
+tagline: Fast-charging battery systems built on niobium anode materials.
+category: climate
+tags: [batteries]
+status: active
+founded: 2019
+location:
+  postcode: CB24 9NG
+origin:
+  type: university-spinout
+  institution: university-of-cambridge
+  department: Yusuf Hamied Department of Chemistry
+source: https://nyobolt.com
+last_verified: 2026-10-17

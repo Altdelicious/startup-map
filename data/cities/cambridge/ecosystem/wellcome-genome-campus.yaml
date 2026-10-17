@@ -1,0 +1,9 @@
+id: wellcome-genome-campus
+name: Wellcome Genome Campus
+website: https://www.wellcomegenomecampus.com
+tagline: Genomics campus hosting the Sanger Institute, EMBL-EBI and startups.
+ecosystem_type: lab-space
+location:
+  postcode: CB10 1SA
+source: https://www.wellcomegenomecampus.com/thecampus/contactus/
+last_verified: 2026-10-17

@@ -1,0 +1,16 @@
+id: nu-quantum
+name: Nu Quantum
+website: https://www.nu-quantum.com
+tagline: Quantum networking hardware that links quantum processors into larger distributed systems.
+category: quantum
+tags: [quantum-networking, photonics]
+status: active
+founded: 2018
+location:
+  postcode: CB3 0FA
+origin:
+  type: university-spinout
+  institution: university-of-cambridge
+  department: Cavendish Laboratory
+source: https://www.nu-quantum.com/contact
+last_verified: 2026-10-17

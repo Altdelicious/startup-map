@@ -1,0 +1,45 @@
+# Once a month, lists entries whose last_verified is more than 12 months old
+# and opens (or updates) a single cleanup issue.
+name: Monthly stale-data check
+
+on:
+  schedule:
+    - cron: "0 6 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      # Errors do not stop this job; it only reports staleness.
+      - run: npm run validate -- --offline --stale-report stale.md || true
+      - name: Open or update the cleanup issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ ! -s stale.md ]; then echo "Nothing is stale."; exit 0; fi
+          count=$(grep -c '^- \[ \]' stale.md)
+          {
+            echo "These entries were last verified more than 12 months ago. Check each one is still accurate, update \`last_verified\`, and open a pull request."
+            echo
+            cat stale.md
+          } > body.md
+          gh label create stale-data --color FBCA04 --description "Entries that need re-verifying" --force
+          existing=$(gh issue list --label stale-data --state open --json number --jq '.[0].number')
+          if [ -n "$existing" ]; then
+            gh issue edit "$existing" --title "Re-verify $count stale entries" --body-file body.md
+          else
+            gh issue create --title "Re-verify $count stale entries" --label stale-data --body-file body.md
+          fi

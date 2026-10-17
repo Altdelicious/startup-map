@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/altdelicious/startup-map/schema/investor.schema.json",
+  "title": "Investor entry",
+  "description": "One investor per YAML file in data/cities/<city>/investors/. Shared fields reuse the startup schema definitions.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "name", "website", "tagline", "location", "investor_type", "focus", "source", "last_verified"],
+  "properties": {
+    "id": { "$ref": "startup.schema.json#/properties/id" },
+    "name": { "$ref": "startup.schema.json#/properties/name" },
+    "website": { "$ref": "startup.schema.json#/$defs/httpsUrl" },
+    "tagline": { "$ref": "startup.schema.json#/properties/tagline" },
+    "location": { "$ref": "startup.schema.json#/properties/location" },
+    "investor_type": {
+      "type": "string",
+      "enum": ["vc", "angel-network", "corporate-vc", "university-fund", "public-fund"]
+    },
+    "focus": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "$ref": "startup.schema.json#/properties/category" },
+      "description": "Category keys from taxonomy.yaml"
+    },
+    "links": { "$ref": "startup.schema.json#/properties/links" },
+    "logo": { "$ref": "startup.schema.json#/properties/logo" },
+    "source": { "$ref": "startup.schema.json#/$defs/httpsUrl" },
+    "last_verified": { "$ref": "startup.schema.json#/properties/last_verified" }
+  }
+}

@@ -1,0 +1,9 @@
+id: cambridge-science-park
+name: Cambridge Science Park
+website: https://www.cambridgesciencepark.co.uk
+tagline: Science park on Milton Road with offices and labs for technology companies.
+ecosystem_type: lab-space
+location:
+  postcode: CB4 0FW
+source: https://www.cambridgesciencepark.co.uk
+last_verified: 2026-10-17

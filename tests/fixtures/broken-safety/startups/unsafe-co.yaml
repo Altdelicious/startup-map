@@ -1,0 +1,18 @@
+# Broken: HTML and a link in text fields, acquired without acquired_by,
+# an unknown university, a future founding year, and an unsafe, non-square SVG logo.
+id: unsafe-co
+name: Unsafe <b>Co</b>
+website: https://unsafe.example.com
+tagline: Best-in-class robots <script>alert(1)</script> see https://spam.example
+category: robotics
+tags: [drones]
+status: acquired
+founded: 2099
+origin:
+  type: university-spinout
+  institution: mit
+location:
+  area: no-such-area
+logo: logos/unsafe-co.svg
+source: https://unsafe.example.com
+last_verified: 2024-01-01

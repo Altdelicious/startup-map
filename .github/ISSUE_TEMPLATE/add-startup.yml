@@ -1,0 +1,93 @@
+name: Add a startup
+description: Suggest a deep-tech startup for the map without using Git. A maintainer turns it into a pull request.
+title: "Add startup: "
+labels: [add-startup]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks! We only list **deep-tech** startups, once each, in the city where they're **headquartered**.
+        Fields marked * are required. Everything you write here is public.
+  - type: input
+    id: name
+    attributes: { label: Company name, placeholder: Example Quantum Co }
+    validations: { required: true }
+  - type: input
+    id: website
+    attributes: { label: Website, description: "Must start with https://", placeholder: "https://example.com" }
+    validations: { required: true }
+  - type: input
+    id: tagline
+    attributes:
+      label: One-line description
+      description: 10–140 characters, plain text, no superlatives.
+      placeholder: Error-corrected photonic qubits for room-temperature quantum computing.
+    validations: { required: true }
+  - type: dropdown
+    id: city
+    attributes: { label: City, options: [Cambridge] }
+    validations: { required: true }
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      description: Pick the closest one. Sub-tags are listed in data/taxonomy.yaml.
+      options:
+        - Foundation models & AI research
+        - AI infrastructure & tooling
+        - AI chips & compute
+        - Applied AI (vertical)
+        - AI for science & bio
+        - Robotics & autonomy
+        - Quantum
+        - Semiconductors & photonics
+        - Biotech & synthetic biology
+        - Climate & energy tech
+        - Advanced materials
+        - Space & aerospace
+    validations: { required: true }
+  - type: input
+    id: tags
+    attributes: { label: Sub-tags (optional), description: "Up to 5, from the category's list in data/taxonomy.yaml", placeholder: "quantum-hardware, photonics" }
+  - type: input
+    id: location
+    attributes:
+      label: Postcode or area
+      description: Office postcode, or for stealth/remote teams an area such as "Cambridge Science Park".
+      placeholder: CB4 0WS
+    validations: { required: true }
+  - type: dropdown
+    id: status
+    attributes: { label: Status, options: [Active, Acquired, Closed] }
+    validations: { required: true }
+  - type: dropdown
+    id: stage
+    attributes:
+      label: Latest known stage (optional)
+      description: Only if a public source confirms it.
+      options: ["Don't know", Pre-seed, Seed, Series A, Series B, Series C+, Grant-funded, Bootstrapped, Public]
+  - type: input
+    id: founded
+    attributes: { label: Year founded (optional), placeholder: "2021" }
+  - type: input
+    id: origin
+    attributes:
+      label: Spin-out from (optional)
+      description: University and department, or company, if it's a spin-out.
+      placeholder: University of Cambridge, Cavendish Laboratory
+  - type: input
+    id: source
+    attributes:
+      label: Source
+      description: A public page (https://) that confirms the company exists and is based in this city.
+    validations: { required: true }
+  - type: textarea
+    id: notes
+    attributes: { label: Anything else? (optional) }
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmation
+      options:
+        - label: The information above is public and accurate to the best of my knowledge, and I agree to it being published under CC BY 4.0.
+          required: true
